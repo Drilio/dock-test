@@ -17,7 +17,7 @@
 #before_script:
 #  - apk add --update --no-cache git
 default:
-    image: "node:latest"
+    image: "registery.github.com/nodejs/docker-node:alpine"
 
 pages:
   cache:
