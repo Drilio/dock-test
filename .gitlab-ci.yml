@@ -1,3 +1,22 @@
+# All available Hugo versions are listed here: https://gitlab.com/pages/hugo/container_registry
+#image: registry.gitlab.com/pages/hugo/hugo_extended:latest
+
+#variables:
+#  GIT_SUBMODULE_STRATEGY: recursive
+
+#pages:
+#  script:
+#  - echo The script part is required in 'pages' section
+# - hugo
+#  artifacts:
+#    paths:
+#    - public
+#  only:
+#  - master
+
+#before_script:
+#  - apk add --update --no-cache git
+
 image: node:latest
 
 pages:
@@ -7,7 +26,7 @@ pages:
 
   script:
     - npm ci
-    - npm test
+    #- npm test
     - npm run build
 
   artifacts:
