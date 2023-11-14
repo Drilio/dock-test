@@ -17,7 +17,7 @@
 #before_script:
 #  - apk add --update --no-cache git
 default:
-    image: "github.com/nodejs/docker-node:latest"
+    image: "node:latest"
 
 pages:
   cache:
