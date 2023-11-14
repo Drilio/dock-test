@@ -16,18 +16,17 @@
 
 #before_script:
 #  - apk add --update --no-cache git
-default:
-    image: "node:latest"
+image: "node:latest"
 
 pages:
+  script:
+    - npm ci
+    - npm test
+    - npm run build
+
   cache:
     paths:
       - node_modules/
-
-  script:
-    - npm ci
-    #- npm test
-    - npm run build
 
   artifacts:
     paths:
