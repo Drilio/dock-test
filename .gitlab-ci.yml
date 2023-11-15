@@ -1,17 +1,17 @@
-image: node:16
-
-pages:
+default:
+  image: node:lts
   cache:
     paths:
       - node_modules/
 
+pages:
   script:
-    - npm ci
-    #- npm test
-    - npm run build
+  - export NODE_OPTIONS=--openssl-legacy-provider
+  - npm ci
+  #- npm test
+  - npm run build
 
   artifacts:
     paths:
-      - public
-  only:
-    - master
+    - public
+
