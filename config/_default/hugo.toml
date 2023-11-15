@@ -1,5 +1,5 @@
 title = "My Docs"
-baseurl = "http://doks-test-antoine-perso-99736c269ce0ed108f0bd1283c834482b315ddd.pages.tetras-libre.fr/"
+baseurl = "http://doks-test-antoine-perso-99736c269ce0ed108f0bd1283c834482b315ddd.pages.tetras-libre.fr"
 canonifyURLs = false
 disableAliases = true
 disableHugoGeneratorInject = true
