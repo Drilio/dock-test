@@ -6,12 +6,12 @@ default:
 
 pages:
   script:
-  - export NODE_OPTIONS=--openssl-legacy-provider
-  - npm ci
-  #- npm test
-  - npm run build
+    - export NODE_OPTIONS=--openssl-legacy-provider
+    - npm ci
+    #- npm test
+    - npm run build
 
   artifacts:
     paths:
-    - public
+      - public
 
