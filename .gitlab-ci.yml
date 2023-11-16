@@ -7,6 +7,15 @@ default:
 pages:
   script:
     - export NODE_OPTIONS=--openssl-legacy-provider
+    # Install brotli
+    - apt-get update
+    - apt-get install -y brotli
+    # Install Dart Sass
+    - curl -LJO https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz
+    - tar -xf dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz
+    - cp -r dart-sass/ /usr/local/bin
+    - rm -rf dart-sass*
+    - export PATH=/usr/local/bin/dart-sass:$PATH
     - npm ci
     #- npm test
     - npm run build
