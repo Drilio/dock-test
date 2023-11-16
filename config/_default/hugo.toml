@@ -1,41 +1,57 @@
-title = "Tetras Doks"
-baseurl = "http://doks-test-antoine-perso-99736c269ce0ed108f0bd1283c834482b315ddd.pages.tetras-libre.fr"
-canonifyURLs = true
+baseurl = "https://epogrebnyak.gitlab.io/doks-howto"
 disableAliases = true
 disableHugoGeneratorInject = true
-# disableKinds = ["taxonomy", "term"]
 enableEmoji = true
 enableGitInfo = false
 enableRobotsTXT = true
-languageCode = "fr-FR "
-paginate = 10
+#languageCode = "en-US"
+paginate = 7
 rssLimit = 10
-summarylength = 20 # 70 (default)
 
-# Multilingual
 defaultContentLanguage = "en"
-disableLanguages = ["de", "nl"]
-defaultContentLanguageInSubdir = false
 
-copyRight = "Copyright (c) 2023 Hyas"
+[languages]
+[languages.ru]
+## Homepage
+title = "Это суперсайт"
+titleSeparator = "-"
+titleAddition = "Modern Documentation Theme"
+description = "Doks is a Hugo theme helping you build modern documentation websites that are secure, fast, and SEO-ready — by default."
+weight = 2
+[languages.en]
+## Homepage
+title = "Doks in Several Languages"
+titleSeparator = "-"
+titleAddition = "Modern Documentation Theme"
+description = "Doks is a Hugo theme helping you build modern documentation websites that are secure, fast, and SEO-ready — by default."
+weight = 1
 
-[build.buildStats]
-  enable = true
 
-[social]
-  twitter = "getdoks"
-
+# add redirects/headers
 [outputs]
-  home = ["HTML", "RSS", "searchIndex"]
-  section = ["HTML", "RSS", "SITEMAP"]
+home = ["HTML", "RSS", "REDIRECTS", "HEADERS"]
+section = ["HTML", "RSS", "SITEMAP"]
 
-[outputFormats.searchIndex]
-  mediaType = "application/json"
-  baseName = "search-index"
-  isPlainText = true
-  notAlternative = true
+# remove .{ext} from text/netlify
+[mediaTypes."text/netlify"]
+suffixes = [""]
+delimiter = ""
 
-# Add output format for section sitemap.xml
+# add output format for netlify _redirects
+[outputFormats.REDIRECTS]
+mediaType = "text/netlify"
+baseName = "_redirects"
+isPlainText = true
+notAlternative = true
+
+# add output format for netlify _headers
+[outputFormats.HEADERS]
+mediaType = "text/netlify"
+baseName = "_headers"
+isPlainText = true
+notAlternative = true
+
+# add output format for section sitemap.xml
 [outputFormats.SITEMAP]
 mediaType = "application/xml"
 baseName = "sitemap"
@@ -44,46 +60,53 @@ isPlainText = true
 noUgly = true
 rel  = "sitemap"
 
-[sitemap]
-  changefreq = "monthly"
-  filename = "sitemap.xml"
-  priority = 0.5
+[markup]
+[markup.goldmark]
+[markup.goldmark.extensions]
+linkify = false
+[markup.goldmark.renderer]
+unsafe = true
+[markup.highlight]
+codeFences = true
+guessSyntax = false
+hl_Lines = ""
+lineNoStart = 1
+lineNos = false
+lineNumbersInTable = true
+noClasses = false
+style = "dracula"
+tabWidth = 4
 
-[caches]
-  [caches.getjson]
-    dir = ":cacheDir/:project"
-    maxAge = "30m"
+[sitemap]
+changefreq = "weekly"
+filename = "sitemap.xml"
+priority = 0.5
 
 [taxonomies]
-  contributor = "contributors"
-  category = "categories"
-  tag = "tags"
+contributor = "contributors"
 
 [permalinks]
-  blog = "/blog/:slug/"
-  docs = "/docs/:sections[1:]/:slug/"
-# docs = "/docs/1.0/:sections[1:]/:slug/"
+blog = "/blog/:title/"
 
-[minify.tdewolff.html]
-  keepWhitespace = false
-
-[related]
-  threshold = 80
-  includeNewer = true
-  toLower = false
-    [[related.indices]]
-    name = "categories"
-    weight = 100
-    [[related.indices]]
-    name = "tags"
-    weight = 80
-    [[related.indices]]
-    name = "date"
-    weight = 10
-
-[imaging]
-  anchor = "Smart"
-  bgColor = "#ffffff"
-  hint = "photo"
-  quality = 75
-  resampleFilter = "Box"
+[module]
+[[module.mounts]]
+source = "assets"
+target = "assets"
+[[module.mounts]]
+source = "static"
+target = "static"
+[[module.mounts]]
+source = "node_modules/lazysizes"
+target = "assets/js/vendor/lazysizes"
+[[module.mounts]]
+source = "node_modules/instant.page"
+target = "assets/js/vendor/instant.page"
+[[module.mounts]]
+source = "node_modules/lazysizes"
+target = "assets/js/vendor/lazysizes"
+[[module.mounts]]
+source = "node_modules/flexsearch"
+target = "assets/js/vendor/flexsearch"
+[[module.mounts]]
+source = "node_modules/clipboard"
+target = "assets/js/vendor/clipboard"
