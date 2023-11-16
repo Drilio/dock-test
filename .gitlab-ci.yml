@@ -11,8 +11,8 @@ pages:
     - apt-get update
     - apt-get install -y brotli
     # Install Dart Sass
-    - curl -LJO https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz
-    - tar -xf dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz
+    - curl -LJO https://github.com/sass/dart-sass/releases/download/1.64.1/dart-sass-1.64.1-linux-x64.tar.gz
+    - tar -xf dart-sass-1.64.1-linux-x64.tar.gz
     - cp -r dart-sass/ /usr/local/bin
     - rm -rf dart-sass*
     - export PATH=/usr/local/bin/dart-sass:$PATH
