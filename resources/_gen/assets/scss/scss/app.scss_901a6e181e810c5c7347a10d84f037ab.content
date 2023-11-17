@@ -13604,5 +13604,11 @@ body {
   background-color: {{ site.Params.doks.backGround }};
 }
 */
+[data-bs-theme="dark"] .btn-primary {
+  background-color: #506257; }
+
+[data-bs-theme="light"] .btn-primary {
+  background-color: #506257;
+  border: #506257; }
 
 /*# sourceMappingURL=main.css.map */

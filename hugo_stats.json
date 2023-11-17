@@ -4,7 +4,6 @@
       "a",
       "article",
       "aside",
-      "base",
       "body",
       "button",
       "circle",
@@ -141,6 +140,7 @@
       "list-inline-item",
       "list-unstyled",
       "list-view",
+      "m-2",
       "mb-0",
       "mb-1",
       "me-2",
@@ -248,9 +248,12 @@
       "searchResults",
       "searchToggleDesktop",
       "searchToggleMobile",
+      "section-0cbc6611f5540bd0809a388dc95a615b",
       "section-45389ee90014e0938cb09409b9a8794d",
       "section-63d5049791d9d79d86e9a108b0a999ca",
       "socialMenu",
+      "sous-titre-test",
+      "titre-test",
       "toc"
     ]
   }

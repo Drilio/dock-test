@@ -1,1 +1,16 @@
-// Put your custom SCSS code here
+
+@include color-mode(dark) {
+  .btn-primary{
+    background-color: $tetra-green;
+
+  }
+
+}
+
+
+@include color-mode(light) {
+  .btn-primary{
+    background-color: $tetra-green;
+    border: $tetra-green;
+  }
+}
